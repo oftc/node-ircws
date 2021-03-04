@@ -57,18 +57,21 @@ config.listeners.forEach(function eachListener(listener) {
     proto = tls;
     serverOptions = listener;
     serverOptions.requestCert = true;
+    serverOptions.rejectUnauthorized = false;
     eventName = 'secureConnection';
     break;
   case 'socketio':
     proto = socketio;
     serverOptions = listener;
     serverOptions.requestCert = true;
+    serverOptions.rejectUnauthorized = false;
     serverOptions.sio_type = 'socketio';
     break;
   case 'websocket':
     proto = socketio;
     serverOptions = listener;
     serverOptions.requestCert = true;
+    serverOptions.rejectUnauthorized = false;
     serverOptions.sio_type = 'ws';
     break;
   default:
